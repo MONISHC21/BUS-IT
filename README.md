@@ -99,6 +99,10 @@ flutter run -d windows
 - **Theme**: `lib/theme/app_theme.dart`
 - **Assets**: `assets/images/`
 
+- ## result images
+  <img width="450" height="800" alt="Image" src="https://github.com/user-attachments/assets/19143cfc-92fd-4a40-a4a4-444a95fbcee8" />
+  <img width="450" height="800" alt="Image" src="https://github.com/user-attachments/assets/e047130b-e6e4-4670-ae27-9162ee8d6d80" />        <img width="450" height="800" alt="Image" src="https://github.com/user-attachments/assets/e537bde9-28ab-43e9-95cf-4a758d6f3e07" />
+
 ## ⚠️ Notes
 - Web uses CanvasKit renderer (included)
 - Voice/location permissions handled with `kIsWeb` checks
