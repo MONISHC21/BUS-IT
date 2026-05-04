@@ -109,5 +109,6 @@ flutter run -d windows
 - Google Maps Flutter plugin
 - Sizer for responsive layouts
 
-**Contact:** MONISHC21  
 **License:** MIT
+
+Thankyou ❤️
