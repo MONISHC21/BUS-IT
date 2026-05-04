@@ -1,112 +1,113 @@
-# Flutter
+# BUSit - Bus Transportation App 🚍
 
-A modern Flutter-based mobile application utilizing the latest mobile development technologies and tools for building responsive cross-platform applications.
+A modern Flutter-based cross-platform app for bus route search, live tracking, booking, and voice-assisted navigation.
 
-## 📋 Prerequisites
+[![Flutter](https://flutter.dev/images/flutter-logo-sharing.png)](https://flutter.dev) [![GitHub Pages](https://github.com/MONISHC21/BUS-IT/actions/workflows/pages/pages-build-deployment/badge.svg)](https://monishc21.github.io/BUS-IT/)
 
-- Flutter SDK (^3.29.2)
-- Dart SDK
-- Android Studio / VS Code with Flutter extensions
-- Android SDK / Xcode (for iOS development)
+## 🌐 Live Demo
+[Live Web App](https://monishc21.github.io/BUS-IT/)
 
-## 🛠️ Installation
+## 📱 Features
+- **Route Search** - Find buses by origin/destination with filters
+- **Live Bus Map** - Real-time tracking with Google Maps
+- **Bus Details** - Capacity, timeline, route info
+- **Voice Assistant** - Natural language queries
+- **Login** - Biometric, social, credential login
+- **Settings** - Language, notifications, profile
+- **Responsive** - Works on mobile, web, desktop
 
-1. Install dependencies:
-```bash
-flutter pub get
+## 🔐 Login Credentials (Demo)
+```
+Email: commuter@busit.com |
+
+Password: commuter123 (Daily Commuter)
+
+Email: tourist@busit.com |
+
+Password: tourist123 (Tourist)
+
+Email: senior@busit.com |
+
+Password: senior123 (Senior Citizen)
+
+Phone: +919876543210 | Password: mobile123 (Mobile User)
+
+Phone: +919123456789 | Password: driver123 (Bus Driver)
+Or use Biometric/Social login (demo mode)
 ```
 
-2. Run the application:
+## 🛠️ Quick Start (Local)
+
+### Prerequisites
+- Flutter SDK >=3.5.0
+- Dart SDK
+- Android Studio/VS Code
+
+### Setup
 ```bash
+git clone https://github.com/MONISHC21/BUS-IT.git
+cd BUS-IT
+flutter pub get
 flutter run
 ```
 
-## 📁 Project Structure
-
-```
-flutter_app/
-├── android/            # Android-specific configuration
-├── ios/                # iOS-specific configuration
-├── lib/
-│   ├── core/           # Core utilities and services
-│   │   └── utils/      # Utility classes
-│   ├── presentation/   # UI screens and widgets
-│   │   └── splash_screen/ # Splash screen implementation
-│   ├── routes/         # Application routing
-│   ├── theme/          # Theme configuration
-│   ├── widgets/        # Reusable UI components
-│   └── main.dart       # Application entry point
-├── assets/             # Static assets (images, fonts, etc.)
-├── pubspec.yaml        # Project dependencies and configuration
-└── README.md           # Project documentation
-```
-
-## 🧩 Adding Routes
-
-To add new routes to the application, update the `lib/routes/app_routes.dart` file:
-
-```dart
-import 'package:flutter/material.dart';
-import 'package:package_name/presentation/home_screen/home_screen.dart';
-
-class AppRoutes {
-  static const String initial = '/';
-  static const String home = '/home';
-
-  static Map<String, WidgetBuilder> routes = {
-    initial: (context) => const SplashScreen(),
-    home: (context) => const HomeScreen(),
-    // Add more routes as needed
-  }
-}
-```
-
-## 🎨 Theming
-
-This project includes a comprehensive theming system with both light and dark themes:
-
-```dart
-// Access the current theme
-ThemeData theme = Theme.of(context);
-
-// Use theme colors
-Color primaryColor = theme.colorScheme.primary;
-```
-
-The theme configuration includes:
-- Color schemes for light and dark modes
-- Typography styles
-- Button themes
-- Input decoration themes
-- Card and dialog themes
-
-## 📱 Responsive Design
-
-The app is built with responsive design using the Sizer package:
-
-```dart
-// Example of responsive sizing
-Container(
-  width: 50.w, // 50% of screen width
-  height: 20.h, // 20% of screen height
-  child: Text('Responsive Container'),
-)
-```
-## 📦 Deployment
-
-Build the application for production:
-
+## 📦 Deployment to GitHub Pages (Production Web)
 ```bash
-# For Android
-flutter build apk --release
+flutter build web --release --base-href "/BUS-IT/"
+mkdir docs
+xcopy /E /I /Y build\\web\\* docs\\
+git add . && git commit -m "Deploy update" && git push
+```
+*GitHub Pages auto-deploys from main:/docs*
 
-# For iOS
-flutter build ios --release
+## 📁 Project Structure
+```
+lib/
+├── presentation/     # Screens: login, route_search, live_bus_map, bus_details, voice_assistant, settings
+├── routes/           # App navigation
+├── theme/            # Light/Dark themes
+├── widgets/          # Custom UI components
+└── main.dart         # Entry point
+assets/               # Images, SVG
+docs/                 # GitHub Pages web build
 ```
 
-## 🙏 Acknowledgments
-- Built by Team innoX
-- Powered by [Flutter](https://flutter.dev) & [Dart](https://dart.dev)
-- Styled with Material Design
+## 🚀 Run on Different Platforms
+```bash
+# Web (local)
+flutter run -d chrome
 
-Built with ❤️ 
+# Android
+flutter run -d android
+
+# iOS
+flutter run -d ios
+
+# Windows
+flutter run -d windows
+```
+
+## 📚 Key Dependencies
+- `google_maps_flutter` - Live maps
+- `geolocator`, `record` - Location & voice
+- `sizer` - Responsive UI
+- `dio` - API calls
+- Full list: `pubspec.yaml`
+
+## 🔧 Customization
+- **Add routes**: Edit `lib/routes/app_routes.dart`
+- **Theme**: `lib/theme/app_theme.dart`
+- **Assets**: `assets/images/`
+
+## ⚠️ Notes
+- Web uses CanvasKit renderer (included)
+- Voice/location permissions handled with `kIsWeb` checks
+- Demo login for testing; replace with real backend in production
+
+## 🙌 Acknowledgments
+- Built with Flutter & Material Design
+- Google Maps Flutter plugin
+- Sizer for responsive layouts
+
+**Contact:** MONISHC21  
+**License:** MIT
